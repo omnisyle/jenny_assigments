@@ -139,7 +139,7 @@ void futureInvestmentValue(double investmentAmount, double annualInterestRate, i
     double monthlyInterest = investmentAmount * monthlyInterestRate;
     investmentAmount += monthlyInterest;
     if (i % 12 == 0) {
-      cout << (i / 12) << setw(20) << investmentAmount << right  << endl;
+      cout << (i / 12) << right << setw(20) << investmentAmount << endl;
     }
   }
 }
@@ -149,10 +149,8 @@ void Question7(){
   double annualInterestRate;
   cout << "The amount invested: ";
   cin >> investmenAmt;
-  cout << endl;
   cout << "Annual interest rate: ";
   cin >> annualInterestRate;
-  cout << endl;
   futureInvestmentValue(investmenAmt, annualInterestRate, 30);
 }
 
