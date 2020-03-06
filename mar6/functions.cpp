@@ -1,5 +1,8 @@
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
+#include <string>
+#include <math.h>
 
 using namespace std;
 
@@ -68,14 +71,93 @@ void Question4(){
   cout << "Is palindrome? " << isPalindrome(num) << endl;
 };
 
+void displaySortedNumbers(int num1, int num2, int num3) {
+  int arr[3] = {num1, num2, num3};
+  // Insert arr[1]
+  if (arr[1] < arr[0]) {
+      swap(arr[0], arr[1]);
+  }
+  // Insert arr[2]
+  if (arr[2] < arr[1]) {
+    swap(arr[1], arr[2]);
+    if (arr[1] < arr[0]) {
+      swap(arr[1], arr[0]);
+    }
+  }
+
+  cout << "The sorted numbers are: "
+    << arr[0] << ", "
+    << arr[1] << ", "
+    << arr[2] << ", "
+    << endl;
+}
+
 void Question5(){
+  char numberInput[100];
+  cout << "Enter three numbers: ";
+  cin >> numberInput;
+  int numbers[3];
 
-};
+  char * token = strtok(numberInput, ",");
+   // loop through the string to extract all other tokens
+  int count = 0;
+  while(token != NULL) {
+    int num = stoi(token);
+    if (count < 3) {
+      numbers[count] = num;
+      count++;
+    }
+    token = strtok(NULL, ",");
+  }
+  displaySortedNumbers(numbers[0], numbers[1], numbers[2]);
+}
 
-void Question6(){};
-void Question7(){};
-void Question8(){};
-void Question9(){};
-void Question10(){};
-void Question11(){};
-void Question12(){};
+void displayPattern(int n) {
+
+  if (n > 1) {
+    displayPattern(n - 1);
+  }
+
+  for (int i = 0; i < n; i++) {
+    cout << n - i;
+  }
+  cout << endl;
+}
+
+void Question6(){
+  cout << "Enter a number: ";
+  int num;
+  cin >> num;
+  displayPattern(num);
+}
+
+void futureInvestmentValue(double investmentAmount, double annualInterestRate, int years) {
+  double monthlyInterestRate = (annualInterestRate / 12.0) / 100.00;
+  cout << "Years" << setw(20) << "Future Value" << endl;
+  int totalMonths = 12 * years;
+  for (int i = 1; i <= totalMonths; i++) {
+    double monthlyInterest = investmentAmount * monthlyInterestRate;
+    investmentAmount += monthlyInterest;
+    if (i % 12 == 0) {
+      cout << (i / 12) << setw(20) << investmentAmount << right  << endl;
+    }
+  }
+}
+
+void Question7(){
+  double investmenAmt;
+  double annualInterestRate;
+  cout << "The amount invested: ";
+  cin >> investmenAmt;
+  cout << endl;
+  cout << "Annual interest rate: ";
+  cin >> annualInterestRate;
+  cout << endl;
+  futureInvestmentValue(investmenAmt, annualInterestRate, 30);
+}
+
+void Question8(){}
+void Question9(){}
+void Question10(){}
+void Question11(){}
+void Question12(){}
