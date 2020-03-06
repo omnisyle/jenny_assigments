@@ -1,0 +1,161 @@
+In this assignment, you will create a c++ project and name it as your full name_functions.
+You will add the following files to your project:
+1.	functions.h
+2.	functions.cpp
+3.	main.cpp
+#1 contains all functions prototypes only
+#2 contains definitions for functions in #1
+#3 contains main function which in turn calls all functions to be tested.
+
+In file1(functions.h), you have:
+int getPentagonalNumber(int n);
+void Question1();
+
+
+In file 2(functions.cpp), you will create a test function  that will define the functions in file1.
+
+int getPentagonalNumber(int n)
+{
+/* This function takes an integer n as a
+parameter and returns a corresponding
+pentagonal    number */
+
+int p = n * (3 * n - 1)/2;
+return p;
+}//end getPentagonalNumber()
+
+
+void Question1()
+{
+  for(int x = 1; x <= 50; x++)
+  {
+    int p = getPentagonalNumber(x);
+    if(x % 5 ==0)
+      cout <<setw(8)<<p<<endl;
+    else
+      cout << setw(8)<<p ;
+  }//end for
+}//end Question1()
+
+Here is a call to Question1() in the main function.
+In file 3 (main.cpp)
+
+int main()
+{
+
+Question1();
+
+  return 0;
+}
+
+Sample Run
+
+
+
+1.	Application ---------------------------------------------------------  getPentagonalNumber()
+(Math: pentagonal numbers) A pentagonal number is defined as n(3n- 1)/2 for
+ n = 1, 2, 3, 4 and so on. So, the first few numbers are 1, 5, 12, 22, .... Write a function with the following header that returns a pentagonal number:
+     def getPentagonalNumber(n):
+
+In the main function in file2, call this function to display the first 50 numbers with 6 numbers per line.
+
+
+
+
+2.	Application ------------------------------------------------------------------------ sumDigits()
+(Sum the digits in an integer) Write a function that computes the sum of the digits in an integer. Use the following function header:
+
+int sumDigits(int n):
+
+
+3.	Application --------------------------------------------------------------------------- reverse()
+(Display an integer reversed) Write the following function to display an integer in
+reverse order:
+
+int reverse(int number)
+For example, reverse(3456) displays 6543. Write a test program that prompts the user to enter an integer and displays its reversal.
+
+4.	Application -----------------------------------------------------------------------isPalindrome()
+(Palindrome integer) Write the functions isPalindrome that uses the function reverse()
+//Return the reversal of an integer, e.g. reverse(456)
+//returns
+// 654
+
+int reverse(int number)
+
+# Return true if number is a palindrome
+bool isPalindrome(int number)
+Use the reverse function to implement isPalindrome. A number is a palindrome if its reversal is the same as itself. Write a test program that prompts the user to enter an integer and reports whether the integer is a palindrome.
+
+5.	Application ------------------------------------------------------- displaySortedNumbers()
+(Sort three numbers) Write the following function to display three numbers in increasing order:
+
+void displaySortedNumbers(int num1,int num2,int num3):
+In the main function, write a test code that prompts the user to enter three numbers and invokes the function to display them in increasing order. Here are some sample runs:
+
+
+6.	Application ----------------------------------------------------------------------displayPattern()
+(Display patterns) Write a function to display a pattern as follows:
+
+The function’s header is:
+
+void displayPattern(int n):
+In the main function, write a test program that prompts the user to enter a number n and invokes displayPattern(n) to display the pattern.
+
+
+
+
+7.	Application -------------------------------------------------------- futureInvestmentValue()
+(Financial application: compute the future investment value) Write a function that computes a future investment value at a given interest rate for a specified number of years. The future investment is determined using the formula in interest formula.
+Use the following function header:
+
+void futureInvestmentValue(double investmentAmount,
+double annualInterestRate, int years):
+
+In the main function, write a test program that prompts the user to enter the investment amount and the annual interest rate in percent and prints a table that displays the future value for the years from 1 to 30. Here is a sample run:
+
+
+
+
+8.	Application ------------------------------------------------------------------------ printMatrix()
+(Display matrix of 0s and 1s) Write a function that displays an n-by-n matrix using the following header:
+
+void printMatrix(int n):
+Each element is 0 or 1, which is generated randomly. Write a test program that prompts the user to enter n and displays an n-by-n matrix. Here is a sample run:
+
+
+
+
+9.	Application --------------------------------------------------------------------------- distance()
+(Geometry: display angles) Implement the distance formula for computing the distance between two points.
+
+double distance(int x1, int y1, int x2, int y2):
+
+In the main function, prompt the user to enter x1, y1, x2, and y2 and display the distace by calling your function distance().
+
+
+10.	Application ---------------------------------------------------------------------- convertMillis()
+(Convert milliseconds to hours, minutes, and seconds) Write a function that converts
+milliseconds to hours, minutes, and seconds using the following header:
+
+void  convertMillis(int millis):
+
+The function returns a string as hours:minutes:seconds. For example, convertMillis(5500) returns the string 0:0:5, convertMillis(100000) returns the string 0:1:40, and convertMillis(555550000) returns the string 154:19:10.
+
+In the main function, write a test program that prompts the user to enter a value for milliseconds and call your function that displays a string in the format of hours:minutes:seconds.
+
+11.	Application --------------------------------------------------------------------------- addCoins()
+Create an AddCoins application that prompts the user for the number of pennies, nickels, dimes, and quarters, and then displays their total dollar amount. The AddCoins application should include a getDollarAmount() method that has four int parameters corresponding to the number of pennies, nickels, dimes, and quarters, and returns a String that corresponds to the dollar value of the coins.
+Note that the String returned should include the currency sign ($).
+Place a call to your functin in the main. A sample run in the main will look similar to the following interactions:
+
+Here is a function signature:
+void addCoins(pennies, nickels, dimes, quarters)
+
+
+
+12.	Application -------------------------------------------------------------------- Menu()
+
+This function will prompt the user for the function Number to run (1-11) and then it will ask the user to enter the parameter for the function chosen if there are any.
+Palce a call to the menu() function in the main function.
+Here is a sample Run
