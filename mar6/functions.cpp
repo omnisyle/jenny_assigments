@@ -39,9 +39,39 @@ void Question2() {
   cout << sumDigits(123) << endl;
 }
 
-void Question3(){};
-void Question4(){};
-void Question5(){};
+int reverse(int number) {
+  int rev = 0;
+  while (number > 0) {
+    rev = rev*10 + number %10;
+    number = number/10;
+  }
+
+  return rev;
+}
+
+void Question3() {
+  int num;
+  cout << "Enter a number for reverse: ";
+  cin >> num;
+  cout << "Reversed number is " << reverse(num) << endl;
+};
+
+bool isPalindrome(int number) {
+  int reversedNumber = reverse(number);
+  return reversedNumber == number;
+}
+
+void Question4(){
+  int num;
+  cout << "Enter a number for palindrome check: ";
+  cin >> num;
+  cout << "Is palindrome? " << isPalindrome(num) << endl;
+};
+
+void Question5(){
+
+};
+
 void Question6(){};
 void Question7(){};
 void Question8(){};
